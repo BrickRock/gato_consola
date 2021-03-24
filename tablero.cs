@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace programa01
 {
@@ -9,10 +10,6 @@ namespace programa01
         char turno;
         Dictionary<int,char> Posibles_Escenarios= new Dictionary<int,char>(); 
         
-        public tablero()
-        {
-            
-        }
         
         public void Matriz()
         {
@@ -50,8 +47,8 @@ namespace programa01
 
         public void verficar()
         {
-            
+                    
         }
 
-    }
+       
 }
