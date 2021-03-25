@@ -8,8 +8,7 @@ namespace programa01
     {
         char[,] matriz = new char[3,3];
         char turno;
-        Dictionary<int,char> Posibles_Escenarios= new Dictionary<int,char>(); 
-        
+    
         
         public void Matriz()
         {
@@ -51,4 +50,5 @@ namespace programa01
         }
 
        
+    }
 }
