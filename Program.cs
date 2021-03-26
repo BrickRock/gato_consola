@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace programa01
@@ -9,7 +10,7 @@ namespace programa01
         {
             
             tablero tabla = new tablero();
-            int number = 5;
+            int number = 2;
             do{
                 Console.Clear();
                 tabla.dibujar();
@@ -17,6 +18,12 @@ namespace programa01
                 number--;
                 Console.ReadKey();
             }while(number > 0);
+            
+
+            foreach(char jaja in tabla)
+            {
+                 Console.WriteLine(jaja);
+            }
         }
     }
 }

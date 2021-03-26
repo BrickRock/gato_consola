@@ -1,14 +1,22 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace programa01
 {
-    public class tablero
+    public class tablero : IEnumerable
     {
-        char[,] matriz = new char[3,3];
+        public char[,] matriz = new char[3,3];
         char turno;
-    
+
+        
+
+        public IEnumerator GetEnumerator()
+        {
+            return new validar_esquina(matriz);
+            
+        }
         
         public void Matriz()
         {
@@ -30,6 +38,7 @@ namespace programa01
             matriz[jugador.Fila, jugador.Columna] = jugador.turno;
             rellenar();
             
+            
         }
 
         public void rellenar()
@@ -43,12 +52,5 @@ namespace programa01
                 
             }
         }
-
-        public void verficar()
-        {
-                    
-        }
-
-       
     }
 }

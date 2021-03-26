@@ -23,6 +23,8 @@ namespace programa01
             Console.WriteLine("Selecciona la columna: ");
             columna = Convert.ToInt32(Console.ReadLine());
             columna -= 1;
+
+            
         }
     }
 
