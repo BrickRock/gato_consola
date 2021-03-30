@@ -19,13 +19,6 @@ namespace programa01
                 Console.ReadKey();
             }while(number > 0);
             
-
-            foreach(coordenada cood in ia.Todas)
-            {
-                cood.obtenerCordenada(out f , out c);
-                Console.WriteLine("la f es {0} , y la c es{1}",f,c);
-            }
-            
         }
     }   
 }

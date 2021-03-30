@@ -35,9 +35,32 @@ namespace programa01
         public static List<coordenada> coProhibida = new List<coordenada>();
         private static List<coordenada> coPermitidas = new List<coordenada>();
         
+        private static Predicate<coordenada> predicado = filtraNumeros;
         public static void filtra()
         {
             
+            coPermitidas = Todas.FindAll(predicado);
+            System.Console.WriteLine("las co permtidas son");
+            coPermitidas.ForEach(x => Console.WriteLine(x));
+        }
+
+        public static void jugada()
+        {
+            filtra();
+            var rand = new Random();
+        }
+
+        private static bool filtraNumeros(coordenada obj)
+        {
+            bool contiene=false;
+            foreach(coordenada coord in coProhibida)
+            {
+                
+                contiene = (obj.Fila, obj.Columna) != (coord.Fila, coord.Columna);
+                if(contiene == false) break;
+            }
+            
+            return contiene;
         }
         
 
@@ -46,7 +69,10 @@ namespace programa01
 
     public class coordenada
     {
-        int fila,columna;
+        private int fila,columna;
+        public int Fila {get => fila;}
+        public int Columna {get => columna;}
+
         public coordenada(int fila, int columna)
         {
             (this.fila, this.columna) = (fila,columna);
@@ -57,5 +83,10 @@ namespace programa01
             filap= fila;
             columnap= columna;
         }
+
+        public override string ToString()
+        {
+            return fila + " " + columna;
+        }  
     }
 }
