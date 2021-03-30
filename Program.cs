@@ -8,9 +8,9 @@ namespace programa01
     {
         static void Main(string[] args)
         {
-            
             tablero tabla = new tablero();
-            int number = 2;
+            int f = 0,c = 0;
+            int number = 3;
             do{
                 Console.Clear();
                 tabla.dibujar();
@@ -20,10 +20,12 @@ namespace programa01
             }while(number > 0);
             
 
-            foreach(char jaja in tabla)
+            foreach(coordenada cood in ia.Todas)
             {
-                 Console.WriteLine(jaja);
+                cood.obtenerCordenada(out f , out c);
+                Console.WriteLine("la f es {0} , y la c es{1}",f,c);
             }
+            
         }
-    }
+    }   
 }

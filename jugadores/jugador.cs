@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace programa01
 {
@@ -23,14 +24,38 @@ namespace programa01
             Console.WriteLine("Selecciona la columna: ");
             columna = Convert.ToInt32(Console.ReadLine());
             columna -= 1;
-
+            ia.coProhibida.Add(new coordenada(fila, columna));
             
         }
     }
 
-    public class ia
+    public static class ia
     {
-        char y = 'y';
+        public static List<coordenada> Todas = new List<coordenada>();
+        public static List<coordenada> coProhibida = new List<coordenada>();
+        private static List<coordenada> coPermitidas = new List<coordenada>();
         
+        public static void filtra()
+        {
+            
+        }
+        
+
+
+    }
+
+    public class coordenada
+    {
+        int fila,columna;
+        public coordenada(int fila, int columna)
+        {
+            (this.fila, this.columna) = (fila,columna);
+        }
+
+        public void obtenerCordenada(out int filap, out int columnap)
+        {
+            filap= fila;
+            columnap= columna;
+        }
     }
 }
