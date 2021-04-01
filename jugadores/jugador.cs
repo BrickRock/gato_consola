@@ -41,18 +41,21 @@ namespace programa01
         public static void filtra()
         {
             coPermitidas = Todas.FindAll(predicado);
+           
         }
 
-        public static void jugada()
+        public static coordenada jugada()
         {
+            filtra();
             int numRandom;      
             var rand = new Random();
-            System.Console.WriteLine(coPermitidas.Count);
+            numRandom = rand.Next(coPermitidas.Count);
+            coProhibida.Add(coPermitidas[numRandom]);
+            return coPermitidas[numRandom];
         }
 
         private static bool filtraNumeros(coordenada obj)
         {
-            System.Console.WriteLine("empezando el metodo");
             bool contiene=false;
             foreach(coordenada coord in coProhibida)
             {
@@ -60,7 +63,6 @@ namespace programa01
                 contiene = (obj.Fila, obj.Columna) != (coord.Fila, coord.Columna);
                 if(contiene == false) break;
             }
-            System.Console.WriteLine("ya se filtraron");
             return contiene;
         }
         
