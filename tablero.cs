@@ -31,8 +31,12 @@ namespace programa01
 
         public void dibujar() //pide al jugador ingresar los datos y los guarda en el array 
         {
+            coordenada iaCoordenada;
             jugador.imput();
             matriz[jugador.Fila, jugador.Columna] = jugador.turno;
+            ia.jugada();
+            //iaCoordenada = ia.jugada();
+            //matriz[iaCoordenada.Fila, iaCoordenada.Columna] = ia.turno;
             rellenar();
             
             

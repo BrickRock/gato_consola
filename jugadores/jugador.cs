@@ -25,12 +25,14 @@ namespace programa01
             columna = Convert.ToInt32(Console.ReadLine());
             columna -= 1;
             ia.coProhibida.Add(new coordenada(fila, columna));
+           
             
         }
     }
 
     public static class ia
     {
+        public static char turno{ get => 'o';}
         public static List<coordenada> Todas = new List<coordenada>();
         public static List<coordenada> coProhibida = new List<coordenada>();
         private static List<coordenada> coPermitidas = new List<coordenada>();
@@ -38,20 +40,19 @@ namespace programa01
         private static Predicate<coordenada> predicado = filtraNumeros;
         public static void filtra()
         {
-            
             coPermitidas = Todas.FindAll(predicado);
-            System.Console.WriteLine("las co permtidas son");
-            coPermitidas.ForEach(x => Console.WriteLine(x));
         }
 
         public static void jugada()
         {
-            filtra();
+            int numRandom;      
             var rand = new Random();
+            System.Console.WriteLine(coPermitidas.Count);
         }
 
         private static bool filtraNumeros(coordenada obj)
         {
+            System.Console.WriteLine("empezando el metodo");
             bool contiene=false;
             foreach(coordenada coord in coProhibida)
             {
@@ -59,7 +60,7 @@ namespace programa01
                 contiene = (obj.Fila, obj.Columna) != (coord.Fila, coord.Columna);
                 if(contiene == false) break;
             }
-            
+            System.Console.WriteLine("ya se filtraron");
             return contiene;
         }
         

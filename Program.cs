@@ -9,7 +9,7 @@ namespace programa01
         static void Main(string[] args)
         {
             tablero tabla = new tablero();
-            int f = 0,c = 0;
+           
             int number = 3;
             do{
                 Console.Clear();
@@ -18,6 +18,8 @@ namespace programa01
                 number--;
                 Console.ReadKey();
             }while(number > 0);
+
+            
             
         }
     }   
