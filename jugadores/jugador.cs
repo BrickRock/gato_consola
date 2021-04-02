@@ -17,16 +17,43 @@ namespace programa01
 
         public static void imput()
         {
-            Console.WriteLine("Selecciona la fila: ");
-            fila = Convert.ToInt32(Console.ReadLine());
-            fila -= 1;
+            bool error = true, excepcion = false;
+            do{
+                try{
 
-            Console.WriteLine("Selecciona la columna: ");
-            columna = Convert.ToInt32(Console.ReadLine());
-            columna -= 1;
-            ia.coProhibida.Add(new coordenada(fila, columna));
-           
+                    if(error== false && excepcion) Console.WriteLine("Ese cordenada no es valida"); 
+                    excepcion = false;
+                    Console.WriteLine("Selecciona la fila: ");
+                    fila = Convert.ToInt32(Console.ReadLine());
+                    fila -= 1;
+
+                    Console.WriteLine("Selecciona la columna: ");
+                    columna = Convert.ToInt32(Console.ReadLine());
+                    columna -= 1;
+                    
+                    error = CoordeanadaProhibida(fila, columna);
+                    excepcion = !error;
+                    ia.coProhibida.Add(new coordenada(fila, columna));
+                } catch (FormatException)
+                {
+                    System.Console.WriteLine("porfavor ingrese valores numericos validos");
+                    excepcion = false;
+                    error = false;
+                    
+                }
+            }while(!error);
             
+        }
+
+        private static bool CoordeanadaProhibida(int fila, int columna)
+        {
+            bool chequeo = true;
+            foreach(coordenada Prohibida in ia.coProhibida){
+                chequeo = (fila, columna) != (Prohibida.Fila, Prohibida.Columna);
+                if(chequeo == false) break;
+            }
+            System.Console.WriteLine(chequeo);
+            return chequeo;
         }
     }
 
