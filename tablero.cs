@@ -48,7 +48,7 @@ namespace programa01
                 for(int j= 0; j<3;j++)
                 {
                     unico++;
-                    if(matriz[i,j] != 'x' && matriz[i,j] != 'o') matriz[i,j] = '*';
+                    if(matriz[i,j] != 'x' && matriz[i,j] != 'o') matriz[i,j] = '*';// si no es una x y o rellena con *
                     if(unico < 9) 
                         ia.Todas.Add(new coordenada(i,j));
                 }
