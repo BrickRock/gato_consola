@@ -12,8 +12,9 @@ Se que son archivos necesario para que .Net funcione pero poco mas
 El gato solo es de un jugador contra la "ia", que realmente lo único que hace es seleccionar una casilla al azar dentre las que estan vacias
 
  > la "ia" solo hace una selección al azar de las casillas disponibles
+ 
 
-#Estructura del proyecto
+# Estructura del proyecto
 
 EL proyecto cuenta con la siguiente organización
 
